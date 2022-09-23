@@ -95,13 +95,20 @@ WSGI_APPLICATION = 'django_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fintech_db',
-        'USER': 'fintech_user',
-        'PASSWORD': '12345',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': '9HAj9KdFrWbiHyzdevI6',
+        'HOST': 'containers-us-west-74.railway.app',
+        'PORT': '6798',
     }
 }
+
+# DATABASE_URL=postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:${{ PGPORT }}/${{ PGDATABASE }}
+# # PGDATABASE=railway
+# # PGHOST=containers-us-west-74.railway.app
+# # PGPASSWORD=9HAj9KdFrWbiHyzdevI6
+# # PGPORT=6798
+# # PGUSER=postgres
 
 
 # Password validation

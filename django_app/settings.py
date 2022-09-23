@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'apps.teachers.apps.TeachersConfig',
     'apps.partners.apps.PartnersConfig',
     'apps.contact.apps.ContactConfig',
-    'apps.payment.apps.PaymentConfig'
+    'whitenoise.runserver_nostatic',
+
 
 
 ]
@@ -63,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'django_app.urls'

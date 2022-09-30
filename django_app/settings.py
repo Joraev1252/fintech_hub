@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'apps.teachers.apps.TeachersConfig',
     'apps.partners.apps.PartnersConfig',
     'apps.contact.apps.ContactConfig',
-
+    'dashboard'
 
 
 ]
@@ -75,7 +75,7 @@ ROOT_URLCONF = 'django_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join('templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -98,11 +98,11 @@ WSGI_APPLICATION = 'django_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': '9HAj9KdFrWbiHyzdevI6',
-        'HOST': 'containers-us-west-74.railway.app',
-        'PORT': '6798',
+        'NAME': 'fintech_db',
+        'USER': 'fintech_user',
+        'PASSWORD': '12345',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 

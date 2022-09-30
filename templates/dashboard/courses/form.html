@@ -1,0 +1,27 @@
+{% extends 'dashboard/base.html' %}
+{% block title %} {% endblock %}
+{% load static %}
+{% block content %}
+
+ <div class="card shadow mb-4">
+     <form action="post">
+         {% csrf_token %}
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Ro'yhat qo'shish</h6>
+            </div>
+            <div class="card-body">
+         {{ forms.as_p }}
+            </div>
+         <button type="submit" class="btn  btn-success">
+      <a class="btn btn-primary btn-square">
+          <i class="fas fa-check"></i>
+          saqlash
+      </a>
+         <a href="{% url 'dash_courses' %}" class="btn btn-primary btn-square">
+          <i class="fas fa-check"></i>
+             ortga
+      </a>
+         </form>
+        </div>
+
+{% endblock %}

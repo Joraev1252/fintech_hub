@@ -1,9 +1,9 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
+from rest_framework.exceptions import NotFound
 from rest_framework.response import Response
 from django.db.models import Q
 from rest_framework import filters
-
 
 from api.courses.serializers import CourseSerializer, FactsSerializer, SearchSerializer
 from api.teachers.serializers import TeacherSerializer
@@ -19,6 +19,10 @@ def course_view(request):
     return Response(serializer.data)
 
 
+def course_detail_view(request, pk):
+    course = CourseModel.objects.get(id=pk)
+    serializer = CourseSerializer(course)
+    return Response(serializer.data)
 @api_view(['GET', ])
 def fact_view(request):
     fact = FactsModel.objects.all()
@@ -28,11 +32,9 @@ def fact_view(request):
 
 @api_view(['POST', ])
 def search_view(request):
-
     a = request.data['word']
     print(request.data)
     if request.method == 'POST':
-
         queryset_news = CourseModel.objects.filter(
             Q(course__icontains=a))
 

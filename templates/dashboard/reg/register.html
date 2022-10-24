@@ -4,7 +4,6 @@
 {% block content %}
 
     <div class="container-fluid">
-
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Tables</h1>
     <!-- DataTales Example -->
@@ -19,24 +18,19 @@
                         <tr>
                             <th>№</th>
                             <th>Name</th>
-                            <th>Course</th>
                         </tr>
                     </thead>
-
-                    {% for i in courses %}
+                    {% for i in lists %}
                     <tbody>
                         <tr><td>{{ forloop.counter }}</td>
-                            <td> <a href="#">  {{ i.teacher }}</a>
-                              </td>
-                            <td>{{ i.course }}</td>
-                        </tr>
+                            <td> <a href="{% url 'dash_register_edit' pk=i.id  %}">  {{ i.full_name }}</a>
+                        </td>
                     </tbody>
                     {% endfor %}
                 </table>
-                <a href="{% url 'dash_courses_add' %}">
+                <a href="{% url 'dash_register_add' %}">
                 <button type="button" class="btn btn-info">qo'shish</button>
                 </a>
-
             </div>
         </div>
     </div>

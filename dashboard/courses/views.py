@@ -28,9 +28,9 @@ def add_edit(requests, pk=None):
         lists = None
     if requests.POST:
         if pk:
-            form = CourseForm(requests.POST, instance=lists)
+            form = CourseForm(requests.POST, requests.FILES or None, instance=lists)
         else:
-            form = CourseForm(requests.POST)
+            form = CourseForm(requests.POST, requests.FILES or None)
         if form.is_valid():
             form.save()
             return redirect('dash_courses')
@@ -40,8 +40,3 @@ def add_edit(requests, pk=None):
         'forms': forms
     }
     return render(requests, 'dashboard/courses/form.html', ctx)
-
-
-def c_detail(requests, pk):
-    # lists =
-    pass

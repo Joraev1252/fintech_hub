@@ -10,7 +10,7 @@ def upload_location(instance, filename):
 
 
 class PartnersModel(models.Model):
-    image = models.ImageField(upload_to=upload_location)
+    image = models.ImageField(upload_to=upload_location, blank=True)
 
     def __str__(self):
         return str(self.id)

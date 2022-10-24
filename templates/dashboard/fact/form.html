@@ -4,14 +4,29 @@
 {% block content %}
 
 <div class="card shadow mb-4">
-    <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Custom Font Size Utilities</h6>
+     <form method="post" enctype="multipart/form-data">
+         {% csrf_token %}
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Ro'yhat qo'shish</h6>
             </div>
             <div class="card-body">
-                <p class="text-xs">.text-xs</p>
-                <p class="text-lg mb-0">.text-lg</p>
+         {{ forms.as_p }}
             </div>
-    </div>
+         <button type="submit" class="btn  btn-success">
+      <a class="btn btn-primary btn-square">
+          <i class="fas fa-check"></i>
+          saqlash
+      </a>
+         </button>
+         <a href="{% url 'dash_facts_list' %}" class="btn btn-primary btn-square">
+          <i class="fas fa-check"></i>
+             ortga
+          </a>
+         </form>
+        </div>
+
+
+
 
 
  <!-- Bootstrap core JavaScript-->

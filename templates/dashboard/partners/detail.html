@@ -1,20 +1,11 @@
+
 {% extends 'dashboard/base.html' %}
 {% block title %} courses {% endblock %}
 {% load static %}
 {% block content %}
 
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Custom Font Size Utilities</h6>
-            </div>
-            <div class="card-body">
-                <p class="text-xs">.text-xs</p>
-                <p class="text-lg mb-0">.text-lg</p>
-            </div>
-    </div>
 
-
- <!-- Bootstrap core JavaScript-->
+<!-- Bootstrap core JavaScript-->
     <script src="{% static 'dashboard/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
@@ -30,5 +21,6 @@
 
     <!-- Page level custom scripts -->
     <script src="{% static 'dashboard/js/demo/datatables-demo.js' %}"></script>
+
 
 {% endblock %}

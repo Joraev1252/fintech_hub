@@ -3,28 +3,30 @@
 {% load static %}
 {% block content %}
 
- <div class="card shadow mb-4">
-     <form method="post" enctype="multipart/form-data">
-         {% csrf_token %}
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Ro'yhat qo'shish</h6>
-            </div>
-            <div class="card-body">
-         {{ forms.as_p }}
-            </div>
-         <button type="submit" class="btn  btn-success">
+  <div class="card shadow mb-4">
+      <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                              {{ forms.as_p }}
+                            </div>
+                        </div>
+           <button type="submit" class="btn  btn-success">
           <i class="fas fa-check"></i>
              saqlash</button>
 
-         <a href="{% url 'dash_courses' %}"   class="btn btn-primary btn-square" >
-
+         <a href="{% url 'dash_register_reg' %}">
+             <button  class="btn btn-primary btn-square">
           <i class="fas fa-left"></i>
           <i class="fas fa-left"></i>
              ortga
-
+             </button>
           </a>
-     </form>
-        </div>
+          </form>
+                    </div>
  <!-- Bootstrap core JavaScript-->
     <script src="{% static 'dashboard/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>

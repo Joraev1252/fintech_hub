@@ -50,6 +50,8 @@ INSTALLED_APPS = [
 
 ]
 
+AUTH_USER_MODEL = "dashboard.User"
+
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend',
@@ -98,8 +100,8 @@ WSGI_APPLICATION = 'django_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fintech_db',
-        'USER': 'fintech_user',
+        'NAME': 'fintech_db1',
+        'USER': 'fintech_user1',
         'PASSWORD': '12345',
         'HOST': '127.0.0.1',
         'PORT': '5432',

@@ -18,16 +18,15 @@
 
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                        <tr>
+                                            <th>№</th>
                                             <th>Name</th>
                                             <th>Course</th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
                                     {% for i in lists %}
-                                        <tr>
-                                            <a href="{% url 'dash_tables_edit' %}">
+                                        <tr><td>{{ forloop.counter }}</td>
+                                            <a href="{% url 'dash_teacher_edit' %}">
                                             <td>{{ i.teacher }}</td>
                                             <td>{{ i.course }}</td>
                                              </a>
@@ -41,11 +40,9 @@
                         </div>
 
                     </div>
-                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                         <a href="{% url 'dash_teacher_add' %}">
-                              <button class="btn btn-primary me-md-2" type="button">qo'shish</button>
-                         </a>
-                     </div>
+                     <a href="{% url 'dash_teacher_add' %}">
+                <button type="button" class="btn btn-info">qo'shish</button>
+                </a>
                 </div>
                 <!-- /.container-fluid -->
 
